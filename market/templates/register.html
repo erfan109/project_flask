@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{%block title%}
+register page
+{% endblock %}
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="post" class="form-register" style="color: white;">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://yt3.ggpht.com/B1Rd3r-j8IUF9UEnbo8b0KbW4iQDxGbRjlvusMT5S5dFsozuflh3dPMCzCS-UfkeMzI9RRaw=s600-c-k-c0x00ffffff-no-rj-rp-mo" width="190" height="190" style="border-radius: 50%;">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Create your New Account
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control",placeholder = "your User Name") }}
+
+            {{ form.email_adress.label() }}
+            {{ form.email_adress(class="form-control",placeholder = "your Email addrees") }}
+
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control",placeholder = "your Password") }}
+
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control",placeholder = "Repeat your password") }}
+            <br>
+            {{ form.submit(class="btn btn-lg btn-primary") }}
+        </form>
+    </div>
+</body>
+{% endblock %}
