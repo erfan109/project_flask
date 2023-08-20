@@ -1,0 +1,30 @@
+{%extends "base.html" %}
+{% block title %}
+  Admin page
+{%endblock%}
+{% block content %}
+    <body class="text-center">
+        <div class="container">
+            <form method="post" style="color: white;">
+                {{ form.hidden_tag() }}
+                <br>
+
+                {{ form.product_name.label() }}
+                {{ form.product_name(class="form-control",placeholder = "the name of the product") }}
+
+                {{ form.product_barcode.label() }}
+                {{ form.product_barcode(class="form-control",placeholder = "product's barcode") }}
+
+                {{ form.product_price.label() }}
+                {{ form.product_price(class="form-control",placeholder = "product's price") }}
+                
+                {{ form.product_description.label() }}
+                {{ form.product_description(class="form-control",placeholder = "product's description") }}
+
+                <br>
+                {{ form.submit(class="btn btn-lg  btn-primary") }}
+
+            </form>
+        </div>
+    </body>
+{% endblock %}

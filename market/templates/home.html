@@ -2,3 +2,22 @@
 {% block title %}
   Home page
 {%endblock%}
+
+{% block content %}
+  <body class="text-center">
+    <div class="container">
+      <br>
+      <img class="mb-4" src="https://yt3.ggpht.com/B1Rd3r-j8IUF9UEnbo8b0KbW4iQDxGbRjlvusMT5S5dFsozuflh3dPMCzCS-UfkeMzI9RRaw=s600-c-k-c0x00ffffff-no-rj-rp-mo" width="190" height="190" style="border-radius: 50%;">
+        <br>
+        <h1>Wellcome to my Website</h1>
+        <br>
+        <h6>if you dont have an account click down bellow</h6>
+        <a class="btn btn-sm btn-block btn-secondary" href="{{url_for('register_page')}}">register</a>
+        <br>
+        <h6>if you Already have an Account and wish to login click here</h6>
+        <a class="btn btn-sm btn-block btn-secondary" href="{{url_for('login_page')}}">login</a>
+        <br>
+        <p>this website is the second website created by me and this is a checkpoint at my job so i can allways find a way to look back at my path and see how much progress i have made</p>
+    </div>
+  </body>
+{% endblock %}
