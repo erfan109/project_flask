@@ -5,7 +5,6 @@ from wtforms.validators import Length , EqualTo , Email , DataRequired , Validat
 from market.models import User
 
 class RegisterForm(FlaskForm):
-    
     def validate_username(self,username_to_check):
         user = User.query.filter_by(username = username_to_check.data).first()
         if user:
@@ -21,10 +20,12 @@ class RegisterForm(FlaskForm):
     password2 = PasswordField(label="Repeat Your Password", validators = [EqualTo('password1'),DataRequired()])
     submit = SubmitField(label="Submit your information")
 
+
 class LoginForm(FlaskForm):
     username = StringField(label="Username",validators=[DataRequired()])
     password = PasswordField(label="Password",validators=[DataRequired()])
     submit = SubmitField(label="Sign in")
+
 
 
 class Item_form(FlaskForm):
@@ -34,3 +35,10 @@ class Item_form(FlaskForm):
     product_description = StringField(label="Product discription",validators=[DataRequired()])
     submit = SubmitField(label="create item")
     
+
+class PurchaseItemForm(FlaskForm):
+    submit = SubmitField(label="Purchase item")
+
+
+class SellItemForm(FlaskForm):
+    submit = SubmitField(label="Sell item")
